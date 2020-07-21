@@ -1,0 +1,21 @@
+version: '3'
+services:
+ jenkins:
+  build:
+    context: src/jenkins
+    dockerfile: Dockerfile
+  restart: always
+  networks:
+   - jenkins
+  volumes:
+   - ./data/:/var/jenkins_home/
+   - /var/run/docker.sock:/var/run/docker.sock
+   - /etc/hosts:/etc/hosts
+  ports:
+   - "8080:8080"
+   - "8443:8443"
+   - "50000:50000"
+   - "25:25"
+networks:
+ jenkins:
+  driver: bridge
