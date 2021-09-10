@@ -7,7 +7,7 @@ RUN pip install yq
 #RUN apt-get install awscli -y
 RUN apt-get install jq -y
 RUN apt-get install sudo
-RUN mkdir -p /tmp/download && curl -L https://download.docker.com/linux/static/stable/x86_64/docker-19.03.2.tgz | tar -xz -C /tmp/download && rm -rf /tmp/download/docker/dockerd && mv /tmp/download/docker/docker* /usr/local/bin/ && rm -rf /tmp/download && groupadd -g 999 docker && usermod -aG docker jenkins
+RUN mkdir -p /tmp/download && curl -L https://download.docker.com/linux/static/stable/x86_64/docker-20.10.8.tgz | tar -xz -C /tmp/download && rm -rf /tmp/download/docker/dockerd && mv /tmp/download/docker/docker* /usr/local/bin/ && rm -rf /tmp/download && groupadd -g 999 docker && usermod -aG docker jenkins
 RUN apt-get install vim -y
 RUN apt-get install zip -y
 RUN apt-get install wget curl  -y
